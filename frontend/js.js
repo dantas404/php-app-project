@@ -8,14 +8,14 @@ $("#button-blue").on("click", function() {
         url: "",
         
         type: "post",
-        data: {nome: txt_nome, comentario: txt_comentario, email: txt_email},
+        data: {name: txt_name, comment: txt_comment, email: txt_email},
         beforeSend: function() {
         
-            console.log("Tentando enviar os dados....");
+            console.log("Working...");
 
         }
     }).done(function(e) {
-        alert("Dados Salvos");
+        alert("Done!");
     })
 
 });

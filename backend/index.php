@@ -1,20 +1,21 @@
 <?
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: *");
 
-include 'conexao.php';
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: *');
 
-$id =  rand(1, 999);
-$nome = $_POST["nome"];
-$email = $_POST["email"];
-$comentario = $_POST["comentario"];
+include 'conect.php';
 
-$query = "INSERT INTO mensagens(id, nome, email, comentario) VALUES ('$id', '$nome', '$email', '$comentario')";
+$id = rand(1, 999);
+$uname = $_POST['name'];
+$email = $_POST['email'];
+$comment = $_POST['comment'];
 
+$query = 'INSERT INTO messages(id, uname, email, coment) VALUES ('$id', '$uname', '$email', '$comment')';
 
-if ($link->query($query) === TRUE) {
-  echo "New record created successfully";
+if ($link->query($query) === TRUE){
+    echo 'NEW RECORD CREATED SUCCESFULLY';
 } else {
-  echo "Error: " . $link->error;
+    echo 'ERROR: ' . $link->error;
 }
+
 ?>
